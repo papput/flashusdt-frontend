@@ -252,6 +252,6 @@ export const faqs = [
   {
     question: "Where can I get help?",
     answer:
-      "Use the Contact page, WhatsApp, Telegram, or email Team@realflash.org. Support hours are listed as available 24x7.",
+      "Use the Contact page, WhatsApp, Telegram, or email info@flashusdtpro. Support hours are listed as available 24x7.",
   },
 ];

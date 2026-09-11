@@ -4,7 +4,10 @@ function env(name: string, fallback: string) {
 }
 
 export const SITE_NAME = "FLASH USDT PRO";
-export const SITE_EMAIL = "Team@realflash.org";
+export const SITE_EMAIL = env(
+  "NEXT_PUBLIC_SITE_EMAIL",
+  "info@flashusdtpro",
+);
 export const SITE_LOCATION = "California, USA";
 export const WHATSAPP_NUMBER = env(
   "NEXT_PUBLIC_WHATSAPP_NUMBER",

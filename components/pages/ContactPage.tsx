@@ -28,10 +28,13 @@ export function ContactPage() {
           <div className="space-y-5">
             <GlassCard className="p-6 space-y-3" hover={false}>
               <h3 className="font-display text-xl font-semibold">Reach us directly</h3>
-              <div className="flex items-center text-sm text-white/70">
+              <a
+                href={`mailto:${SITE_EMAIL}`}
+                className="flex items-center text-sm text-white/70 hover:text-cyan-300 transition-colors"
+              >
                 <HiOutlineEnvelope className="mr-2 text-cyan-300" />
                 {SITE_EMAIL}
-              </div>
+              </a>
               <div className="flex items-start text-sm text-white/70">
                 <HiOutlineMapPin className="mr-2 text-cyan-300" />
                 {SITE_LOCATION}

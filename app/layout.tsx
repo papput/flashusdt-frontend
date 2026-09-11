@@ -29,12 +29,11 @@ export const metadata: Metadata = {
     "FLASH USDT PRO — a premium crypto interface for packages, networks, license activation, and transfer UI.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/logo.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-icon.png",
   },
 };
 
