@@ -29,7 +29,8 @@ export interface Coin {
   id: number;
   name: string;
   symbol: string;
-  logo: string;
+  geckoId: string;
+  logo?: string;
   price: string;
   change: string;
   isPositive: boolean;
@@ -38,6 +39,16 @@ export interface Coin {
   features: string[];
   gradient: string;
   popular: boolean;
+}
+
+export interface MarketQuote {
+  id: string;
+  symbol: string;
+  name: string;
+  price: number;
+  change24h: number;
+  volume: number;
+  marketCap: number;
 }
 
 export interface NetworkOption {

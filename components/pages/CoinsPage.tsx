@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { useAppState } from "@/lib/context";
 import { coins } from "@/lib/data";
+import { formatChange, formatCompactUsd, formatUsdPrice } from "@/lib/markets";
+import { useMarkets } from "@/lib/useMarkets";
 import { useRouter } from "next/navigation";
 import { RiFlashlightFill, RiShieldFlashFill, RiStarFill, RiTimerFlashFill } from "react-icons/ri";
 import { TbTrendingDown, TbTrendingUp } from "react-icons/tb";
@@ -13,6 +15,8 @@ import { TbTrendingDown, TbTrendingUp } from "react-icons/tb";
 export function CoinsPage() {
   const router = useRouter();
   const { setSelectedCoin } = useAppState();
+  const { markets } = useMarkets();
+  const quotes = new Map(markets.map((item) => [item.symbol, item]));
 
   return (
     <PageShell>
@@ -28,7 +32,15 @@ export function CoinsPage() {
 
       <section className="relative px-4 sm:px-8 pb-8">
         <div className="container mx-auto max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {coins.map((coin) => (
+          {coins.map((coin) => {
+            const live = quotes.get(coin.symbol);
+            const price = live ? `$${formatUsdPrice(live.price)}` : coin.price;
+            const change = live ? formatChange(live.change24h) : coin.change;
+            const isPositive = live ? live.change24h >= 0 : coin.isPositive;
+            const marketCap = live ? formatCompactUsd(live.marketCap) : coin.marketCap;
+            const volume = live ? formatCompactUsd(live.volume) : null;
+
+            return (
             <GlassCard
               key={coin.id}
               className={`overflow-hidden ${coin.popular ? "glow-ring" : ""}`}
@@ -42,22 +54,25 @@ export function CoinsPage() {
                 <div className="flex items-center justify-between mb-4">
                   <TokenLogo symbol={coin.symbol} className="w-14 h-14 drop-shadow-lg" />
                   <div className="text-right">
-                    <div className="font-mono text-2xl font-bold">{coin.price}</div>
+                    <div className="font-mono text-2xl font-bold">{price}</div>
                     <div
                       className={`flex items-center justify-end text-sm ${
-                        coin.isPositive ? "text-emerald-100" : "text-rose-100"
+                        isPositive ? "text-emerald-100" : "text-rose-100"
                       }`}
                     >
-                      {coin.isPositive ? <TbTrendingUp /> : <TbTrendingDown />}
-                      <span className="ml-1">{coin.change}</span>
+                      {isPositive ? <TbTrendingUp /> : <TbTrendingDown />}
+                      <span className="ml-1">{change}</span>
                     </div>
                   </div>
                 </div>
                 <h3 className="font-display text-2xl font-bold mb-1">{coin.name}</h3>
-                <p className="text-sm opacity-90 flex justify-between font-mono">
+                <p className="text-sm opacity-90 flex justify-between font-mono gap-3">
                   <span>{coin.symbol}</span>
-                  <span>Cap: {coin.marketCap}</span>
+                  <span>Cap: {marketCap}</span>
                 </p>
+                {volume ? (
+                  <p className="text-xs opacity-80 font-mono mt-2">Vol 24h: {volume}</p>
+                ) : null}
               </div>
               <div className="p-6">
                 <p className="text-white/65 mb-5">{coin.description}</p>
@@ -84,7 +99,8 @@ export function CoinsPage() {
                 </Button>
               </div>
             </GlassCard>
-          ))}
+            );
+          })}
         </div>
       </section>
 

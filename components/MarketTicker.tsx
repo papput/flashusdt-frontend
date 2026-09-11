@@ -1,13 +1,29 @@
-const tickers = [
-  { symbol: "USDT", price: "1.0002", change: "+0.01%" },
-  { symbol: "BTC", price: "43,250", change: "+2.45%" },
-  { symbol: "TRX", price: "0.0921", change: "+0.85%" },
-  { symbol: "ETH", price: "2,318", change: "+1.12%" },
-  { symbol: "BNB", price: "582.40", change: "+0.64%" },
-  { symbol: "SOL", price: "148.70", change: "+3.21%" },
+"use client";
+
+import { formatChange, formatCompactUsd, formatUsdPrice } from "@/lib/markets";
+import { useMarkets } from "@/lib/useMarkets";
+
+const fallback = [
+  { symbol: "USDT", price: "1.00", change: "+0.00%", volume: "$0", positive: true },
+  { symbol: "BTC", price: "—", change: "+0.00%", volume: "$0", positive: true },
+  { symbol: "TRX", price: "—", change: "+0.00%", volume: "$0", positive: true },
+  { symbol: "ETH", price: "—", change: "+0.00%", volume: "$0", positive: true },
+  { symbol: "BNB", price: "—", change: "+0.00%", volume: "$0", positive: true },
+  { symbol: "SOL", price: "—", change: "+0.00%", volume: "$0", positive: true },
 ];
 
 export function MarketTicker() {
+  const { markets } = useMarkets();
+  const tickers =
+    markets.length > 0
+      ? markets.map((item) => ({
+          symbol: item.symbol,
+          price: formatUsdPrice(item.price),
+          change: formatChange(item.change24h),
+          volume: formatCompactUsd(item.volume),
+          positive: item.change24h >= 0,
+        }))
+      : fallback;
   const loop = [...tickers, ...tickers];
 
   return (
@@ -20,7 +36,10 @@ export function MarketTicker() {
           >
             <span className="text-cyan-300">{item.symbol}</span>
             <span className="text-white">${item.price}</span>
-            <span className="text-emerald-400">{item.change}</span>
+            <span className={item.positive ? "text-emerald-400" : "text-rose-400"}>
+              {item.change}
+            </span>
+            <span className="text-white/45">Vol {item.volume}</span>
           </div>
         ))}
       </div>
