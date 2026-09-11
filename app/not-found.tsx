@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <PageShell>
-      <div className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center max-w-lg glass-panel rounded-[32px] p-10">
+      <div className="min-h-screen flex items-center justify-center px-4 pt-24">
+        <div className="text-center max-w-lg glass-panel rounded-[32px] p-6 sm:p-10">
           <p className="text-cyan-300 mb-3 font-mono tracking-[0.3em]">404</p>
           <h1 className="font-display text-4xl font-extrabold mb-4 text-gradient">
             Page not found

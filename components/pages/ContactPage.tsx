@@ -13,10 +13,10 @@ import { RiTelegramFill, RiWhatsappFill } from "react-icons/ri";
 export function ContactPage() {
   return (
     <PageShell>
-      <div className="max-w-5xl mx-auto px-6 pt-36 pb-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-20">
         <div className="text-center mb-12">
           <PillBadge>Get In Touch</PillBadge>
-          <h1 className="font-display text-5xl font-extrabold mb-3 text-gradient">
+          <h1 className="font-display text-4xl sm:text-5xl font-extrabold mb-3 text-gradient">
             Contact Us
           </h1>
           <p className="text-white/65 text-lg">

@@ -50,10 +50,10 @@ export function ActivationPage() {
 
   return (
     <PageShell>
-      <header className="relative text-center pt-36 pb-12 px-4">
+      <header className="relative text-center pt-28 sm:pt-36 pb-12 px-4">
         <div className="max-w-6xl mx-auto">
           <PillBadge>License Activation</PillBadge>
-          <h1 className="font-display text-5xl md:text-6xl font-extrabold tracking-tight text-gradient mb-4">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gradient mb-4">
             Activate Your License
           </h1>
           <p className="text-white/65 text-lg max-w-2xl mx-auto">
@@ -61,9 +61,9 @@ export function ActivationPage() {
           </p>
         </div>
       </header>
-      <div className="relative max-w-4xl mx-auto px-6 pb-16">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 pb-16">
         <GlassCard className="mb-12" hover={false}>
-          <div className="p-8 md:p-12">
+          <div className="p-5 sm:p-8 md:p-12">
             <div className="text-center mb-8">
               <div className="w-20 h-20 mx-auto mb-4">
                 <ShieldCrestSvg className="w-20 h-20 drop-shadow-[0_10px_30px_rgba(34,211,238,0.35)]" />

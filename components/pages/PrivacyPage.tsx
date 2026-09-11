@@ -5,9 +5,9 @@ import Link from "next/link";
 export function PrivacyPage() {
   return (
     <PageShell>
-      <div className="max-w-4xl mx-auto pt-36 pb-16 px-6">
-        <div className="glass-panel rounded-[32px] p-8 md:p-12">
-          <h1 className="font-display text-4xl font-extrabold mb-8 text-gradient">
+      <div className="max-w-4xl mx-auto pt-28 sm:pt-36 pb-16 px-4 sm:px-6">
+        <div className="glass-panel rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 md:p-12">
+          <h1 className="font-display text-3xl sm:text-4xl font-extrabold mb-8 text-gradient">
           Privacy Policy
         </h1>
         <ol className="list-decimal list-inside space-y-8 text-gray-300">

@@ -43,10 +43,10 @@ const steps = [
 export function GetStartedPage() {
   return (
     <PageShell>
-      <div className="max-w-5xl mx-auto px-6 pt-36 pb-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-20">
         <div className="text-center mb-12">
           <PillBadge>Getting Started Guide</PillBadge>
-          <h1 className="font-display text-5xl font-extrabold mb-3 text-gradient">
+          <h1 className="font-display text-4xl sm:text-5xl font-extrabold mb-3 text-gradient">
             Get Started
           </h1>
           <p className="text-white/65 text-lg max-w-2xl mx-auto">

@@ -129,8 +129,8 @@ export function PaymentPage() {
 
   return (
     <PageShell variant="soft">
-      <header className="relative bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-xl border-b border-white/10 text-white py-20 z-10">
-        <div className="container mx-auto px-6 text-center">
+      <header className="relative bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-xl border-b border-white/10 text-white pt-28 sm:pt-32 pb-12 sm:pb-20 z-10">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <PillBadge tone="yellow">Payment Page</PillBadge>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -138,24 +138,24 @@ export function PaymentPage() {
             alt="Network Logo"
             className="w-24 h-24 mx-auto mb-6 rounded-full shadow-2xl bg-white/10 p-3 backdrop-blur-xl"
           />
-          <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-4 text-gradient-gold">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 text-gradient-gold break-words">
             Complete Your Flash USDT Payment
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto">
             You selected <strong>{selectedPlan.name}</strong> plan. Please
             transfer <strong>{selectedPlan.price}</strong> to our{" "}
             {headingNetwork} wallet.
           </p>
         </div>
       </header>
-      <section className="relative py-20 px-6 z-10">
+      <section className="relative py-10 sm:py-20 px-4 sm:px-6 z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <GlassCard className="p-8" hover={false}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
+            <GlassCard className="p-5 sm:p-8" hover={false}>
               <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white p-6 rounded-2xl mb-6">
                 <div className="flex items-center mb-4">
                   <RiWallet3Fill className="text-2xl mr-3" />
-                  <h2 className="font-display text-2xl font-bold">Wallet Address</h2>
+                  <h2 className="font-display text-xl sm:text-2xl font-bold">Wallet Address</h2>
                 </div>
                 <p className="text-emerald-50 text-sm">
                   Send USDT to the address below ({headingNetwork} Network)
@@ -164,17 +164,17 @@ export function PaymentPage() {
               <label className="block text-white/70 text-sm font-medium mb-2">
                 USDT Wallet Address
               </label>
-              <div className="flex rounded-xl overflow-hidden border border-white/10">
+              <div className="flex flex-col sm:flex-row rounded-xl overflow-hidden border border-white/10">
                 <input
                   type="text"
                   readOnly
                   value={wallet}
-                  className="flex-1 bg-white/10 px-4 py-4 text-white text-sm font-mono"
+                  className="w-full flex-1 bg-white/10 px-3 sm:px-4 py-4 text-white text-xs sm:text-sm font-mono break-all"
                 />
                 <button
                   type="button"
                   onClick={copyAddress}
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-4 font-semibold flex items-center"
+                  className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 sm:py-4 font-semibold flex items-center justify-center"
                 >
                   {copied ? (
                     <>
@@ -196,7 +196,7 @@ export function PaymentPage() {
               )}
             </GlassCard>
 
-            <GlassCard className="p-8" hover={false}>
+            <GlassCard className="p-5 sm:p-8" hover={false}>
               <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white p-6 rounded-2xl mb-6">
                 <div className="flex items-center mb-4">
                   <HiOutlineCreditCard className="text-2xl mr-3" />
@@ -248,7 +248,7 @@ export function PaymentPage() {
               onClick={onSubmit}
               disabled={processing}
               variant="success"
-              className="px-8 py-4 text-lg rounded-2xl mx-auto"
+              className="w-full sm:w-auto px-8 py-4 text-base sm:text-lg rounded-2xl mx-auto"
             >
               {processing ? (
                 <>

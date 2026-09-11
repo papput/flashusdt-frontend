@@ -11,12 +11,12 @@ export function MarketTicker() {
   const loop = [...tickers, ...tickers];
 
   return (
-    <div className="relative overflow-hidden rounded-full border border-white/10 bg-white/5 py-3 mb-10">
-      <div className="flex w-max animate-marquee gap-10 px-6">
+    <div className="relative overflow-hidden rounded-full border border-white/10 bg-white/5 py-2.5 sm:py-3 ticker-mask">
+      <div className="flex w-max animate-marquee gap-6 sm:gap-10 px-4 sm:px-6">
         {loop.map((item, index) => (
           <div
             key={`${item.symbol}-${index}`}
-            className="flex items-center gap-3 whitespace-nowrap font-mono text-sm"
+            className="flex items-center gap-2 sm:gap-3 whitespace-nowrap font-mono text-xs sm:text-sm"
           >
             <span className="text-cyan-300">{item.symbol}</span>
             <span className="text-white">${item.price}</span>

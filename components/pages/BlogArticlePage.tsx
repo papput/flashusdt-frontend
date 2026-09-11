@@ -12,7 +12,7 @@ export function BlogArticlePage({
 }) {
   return (
     <PageShell>
-      <article className="max-w-4xl mx-auto px-6 pt-36 pb-16">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-16">
         <Link
           href="/blog"
           className="text-cyan-400 hover:text-cyan-300 text-sm mb-6 inline-block"
@@ -26,7 +26,7 @@ export function BlogArticlePage({
           <span className="text-gray-400">{post.date}</span>
           <span className="text-gray-500">{post.readTime}</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-400 to-blue-500 bg-clip-text text-transparent leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-400 to-blue-500 bg-clip-text text-transparent leading-tight">
           {post.title}
         </h1>
         <p className="text-gray-400 mb-10">By {post.author}</p>

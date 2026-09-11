@@ -13,9 +13,9 @@ const reasons = [
 export function AboutPage() {
   return (
     <PageShell>
-      <div className="max-w-4xl mx-auto pt-36 pb-16 px-6">
-        <div className="glass-panel rounded-[32px] p-8 md:p-12 space-y-8">
-          <h1 className="font-display text-4xl font-extrabold text-center text-gradient">
+      <div className="max-w-4xl mx-auto pt-28 sm:pt-36 pb-16 px-4 sm:px-6">
+        <div className="glass-panel rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 md:p-12 space-y-8">
+          <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-center text-gradient">
           Welcome to FlashUSDT - Pro
         </h1>
         <p className="text-center text-gray-300 text-lg">

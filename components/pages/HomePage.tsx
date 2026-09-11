@@ -77,20 +77,20 @@ export function HomePage() {
 
   return (
     <PageShell>
-      <section className="relative pt-36 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-cyan-300/20 bg-cyan-400/10 text-cyan-200 text-sm mb-8">
-              <RiStarFill className="text-amber-300" />
-              Trusted by 50,000+ users worldwide
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+      <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-12 items-center">
+          <div className="animate-fade-in min-w-0">
+            <div className="inline-flex max-w-full flex-wrap items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full border border-cyan-300/20 bg-cyan-400/10 text-cyan-200 text-xs sm:text-sm mb-6 sm:mb-8">
+              <RiStarFill className="text-amber-300 shrink-0" />
+              <span>Trusted by 50,000+ users worldwide</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-[5.4rem] font-extrabold leading-[0.95] mb-7">
+            <h1 className="font-display text-[2.05rem] leading-[1.05] sm:text-5xl md:text-7xl lg:text-[5.4rem] sm:leading-[0.95] font-extrabold mb-6 sm:mb-7 break-words">
               <span className="text-white">Revolutionary</span>
               <br />
               <span className="text-gradient">USDT Flash System</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/65 mb-10 max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-white/65 mb-8 sm:mb-10 max-w-xl leading-relaxed">
               Experience the next generation of cryptocurrency transactions with
               our advanced Flash USDT platform.{" "}
               <span className="text-cyan-300">
@@ -98,10 +98,10 @@ export function HomePage() {
               </span>{" "}
               transfers at the speed of light.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
               <Button
                 onClick={() => router.push("/pricing")}
-                className="px-8 py-4 text-lg"
+                className="w-full sm:w-auto px-8 py-4 text-base sm:text-lg"
               >
                 Buy Now
                 <HiArrowRight />
@@ -109,17 +109,25 @@ export function HomePage() {
               <Button
                 variant="ghost"
                 onClick={() => openVideo(DEMO_VIDEO)}
-                className="px-7 py-4"
+                className="w-full sm:w-auto px-7 py-4"
               >
                 <HiOutlinePlay />
                 Watch demo
               </Button>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button variant="gold" onClick={() => openVideo(DEMO_VIDEO)}>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10">
+              <Button
+                variant="gold"
+                className="w-full sm:w-auto"
+                onClick={() => openVideo(DEMO_VIDEO)}
+              >
                 Watch USDT Flash Demo
               </Button>
-              <Button variant="gold" onClick={() => openVideo(BINANCE_VIDEO)}>
+              <Button
+                variant="gold"
+                className="w-full sm:w-auto"
+                onClick={() => openVideo(BINANCE_VIDEO)}
+              >
                 Watch Binance USDT Flash
               </Button>
             </div>
@@ -135,16 +143,16 @@ export function HomePage() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 sm:mt-16">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <GlassCard key={stat.label} className="p-6 text-center">
-                <Icon className="mx-auto text-2xl text-cyan-300 mb-3" />
-                <div className="font-display text-3xl font-bold text-white mb-1">
+              <GlassCard key={stat.label} className="p-4 sm:p-6 text-center">
+                <Icon className="mx-auto text-xl sm:text-2xl text-cyan-300 mb-2 sm:mb-3" />
+                <div className="font-display text-2xl sm:text-3xl font-bold text-white mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-white/50">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-white/50">{stat.label}</div>
               </GlassCard>
             );
           })}
@@ -162,7 +170,7 @@ export function HomePage() {
             {features.map((feature) => {
               const Icon = feature.icon;
               return (
-                <GlassCard key={feature.title} className="p-8 relative overflow-hidden">
+                <GlassCard key={feature.title} className="p-6 sm:p-8 relative overflow-hidden">
                   <div
                     className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center text-white text-2xl mb-6 shadow-lg`}
                   >
@@ -179,11 +187,11 @@ export function HomePage() {
             })}
           </div>
 
-          <GlassCard className="p-8 md:p-12 overflow-hidden" hover={false}>
+          <GlassCard className="p-6 sm:p-8 md:p-12 overflow-hidden" hover={false}>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <PillBadge>Zero-knowledge</PillBadge>
-                <h3 className="font-display text-3xl font-bold mb-5">
+                <h3 className="font-display text-2xl sm:text-3xl font-bold mb-5">
                   Advanced Key Generation
                 </h3>
                 <p className="text-white/65 mb-8 text-lg leading-relaxed">
@@ -203,7 +211,7 @@ export function HomePage() {
                     </div>
                   ))}
                 </div>
-                <Button variant="success">Generate Keys Now</Button>
+                <Button variant="success" className="w-full sm:w-auto">Generate Keys Now</Button>
               </div>
               <div className="text-center rounded-[28px] border border-emerald-300/20 bg-emerald-400/8 p-10">
                 <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-4xl shadow-2xl shadow-emerald-500/30">
@@ -226,7 +234,7 @@ export function HomePage() {
           />
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((item) => (
-              <GlassCard key={item.name} className="p-8">
+              <GlassCard key={item.name} className="p-6 sm:p-8">
                 <div className="flex gap-1 mb-5 text-amber-300">
                   {Array.from({ length: item.rating }).map((_, index) => (
                     <RiStarFill key={`${item.name}-${index}`} />

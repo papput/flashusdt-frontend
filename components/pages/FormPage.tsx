@@ -74,17 +74,17 @@ export function FormPage() {
 
   return (
     <PageShell>
-      <div className="pt-36 pb-8 text-center">
-        <h1 className="font-display text-5xl md:text-6xl font-extrabold mb-4 text-gradient">
+      <div className="pt-28 sm:pt-36 pb-8 px-4 text-center">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-gradient">
           Flash Transfer
         </h1>
-        <p className="text-xl text-white/65 max-w-2xl mx-auto">
+        <p className="text-base sm:text-xl text-white/65 max-w-2xl mx-auto">
           Send instant USDT flash transfers with advanced security
         </p>
       </div>
-      <div className="container mx-auto px-6 pb-16">
+      <div className="container mx-auto px-4 sm:px-6 pb-16">
         <div className="max-w-4xl mx-auto">
-          <GlassCard className="p-8 md:p-12" hover={false}>
+          <GlassCard className="p-5 sm:p-8 md:p-12" hover={false}>
             <form onSubmit={onSubmit} className="space-y-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
@@ -100,7 +100,7 @@ export function FormPage() {
                       onChange={onChange}
                       placeholder="Enter sender wallet address..."
                       required
-                      className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all backdrop-blur-xl"
+                      className="w-full px-4 sm:px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all backdrop-blur-xl"
                     />
                   </div>
                   <div className="group relative">
@@ -115,7 +115,7 @@ export function FormPage() {
                       onChange={onChange}
                       placeholder="Enter amount..."
                       required
-                      className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all backdrop-blur-xl"
+                      className="w-full px-4 sm:px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all backdrop-blur-xl"
                     />
                     <p className="text-sm text-orange-400 mt-1">
                       Available Flash: $0.00
@@ -133,7 +133,7 @@ export function FormPage() {
                         name="network"
                         value={form.network}
                         onChange={onChange}
-                      className="w-full px-6 py-4 pr-10 bg-[#0b1220] border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all appearance-none"
+                        className="w-full px-4 sm:px-6 py-4 pr-10 bg-[#0b1220] border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all appearance-none"
                       >
                         <option value="USDT (TRC20)">USDT (TRC20)</option>
                         <option value="USDT (BEP20)">USDT (BEP20)</option>
@@ -152,7 +152,7 @@ export function FormPage() {
                       onChange={onChange}
                       placeholder="Add a note for this transfer..."
                       rows={3}
-                      className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all backdrop-blur-xl resize-none"
+                      className="w-full px-4 sm:px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all backdrop-blur-xl resize-none"
                     />
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export function FormPage() {
               </div>
 
               <div className="flex flex-col items-center pt-6 space-y-3">
-                <Button type="submit" disabled={processing} className="px-12 py-4 text-xl rounded-2xl">
+                <Button type="submit" disabled={processing} className="w-full sm:w-auto px-8 sm:px-12 py-4 text-base sm:text-xl rounded-2xl">
                   {processing ? "Processing Transfer..." : (
                     <>
                       <TbSend />

@@ -16,11 +16,15 @@ export function PageShell({
   variant?: "default" | "soft";
 }) {
   return (
-    <div className="min-h-screen relative overflow-hidden text-white">
+    <div className="min-h-screen relative overflow-x-hidden text-white">
       <PageBackground variant={variant} />
       <Navbar />
-      <div className="relative z-10">{children}</div>
-      {footer ? <div className="relative z-10"><Footer /></div> : null}
+      <div className="relative z-10 pb-28 sm:pb-16">{children}</div>
+      {footer ? (
+        <div className="relative z-10 pb-24 sm:pb-8">
+          <Footer />
+        </div>
+      ) : null}
       {contact ? <FloatingContact /> : null}
     </div>
   );

@@ -14,7 +14,7 @@ export function PaymentField({ label, icon, ...props }: PaymentFieldProps) {
       </label>
       <input
         {...props}
-        className="w-full bg-white/6 border border-white/12 px-4 py-4 rounded-2xl text-white placeholder-white/35 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 font-mono text-sm"
+        className="w-full min-w-0 bg-white/6 border border-white/12 px-3 sm:px-4 py-4 rounded-2xl text-white placeholder-white/35 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 font-mono text-xs sm:text-sm"
       />
     </div>
   );

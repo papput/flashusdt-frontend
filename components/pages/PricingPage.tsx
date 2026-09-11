@@ -16,9 +16,9 @@ export function PricingPage() {
 
   return (
     <PageShell>
-      <header className="relative pt-36 pb-16 px-6 text-center">
+      <header className="relative pt-28 sm:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 text-center">
         <PillBadge>Pricing Plans</PillBadge>
-        <h1 className="font-display text-4xl md:text-6xl font-extrabold mb-4 text-gradient">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 text-gradient break-words">
           Choose Your USDT Flash Package
         </h1>
         <p className="text-lg text-white/65 max-w-2xl mx-auto">
@@ -26,7 +26,7 @@ export function PricingPage() {
           temporary USDT transfers with customizable durations.
         </p>
       </header>
-      <section className="relative px-6 pb-20">
+      <section className="relative px-4 sm:px-6 pb-20">
         <div className="container mx-auto max-w-7xl grid md:grid-cols-3 gap-6">
           {pricingPlans.map((plan) => (
             <GlassCard
@@ -38,7 +38,7 @@ export function PricingPage() {
                   Most Popular
                 </div>
               ) : null}
-              <div className={`bg-gradient-to-r ${plan.gradient} p-8 text-white`}>
+              <div className={`bg-gradient-to-r ${plan.gradient} p-6 sm:p-8 text-white`}>
                 <div className="flex justify-center mb-4">
                   <PlanIcon name={plan.icon} />
                 </div>
@@ -49,7 +49,7 @@ export function PricingPage() {
                   {plan.description}
                 </p>
               </div>
-              <div className="p-8">
+              <div className="p-6 sm:p-8">
                 <div className="text-center mb-6">
                   <div className="font-display text-4xl font-bold mb-2">
                     {plan.price}

@@ -25,18 +25,18 @@ export function BlogIndexPage() {
 
   return (
     <PageShell>
-      <header className="relative pt-36 pb-12 px-6 text-center">
+      <header className="relative pt-28 sm:pt-36 pb-12 px-4 sm:px-6 text-center">
         <PillBadge>Education</PillBadge>
-        <h1 className="font-display text-4xl md:text-6xl font-extrabold mb-4 text-gradient">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 text-gradient">
             Insights & Guides
           </h1>
-          <p className="text-xl text-white/65 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-white/65 max-w-2xl mx-auto">
             Fictional educational articles about reading crypto UIs, wallet
             hygiene, and network labels. Not financial advice.
           </p>
       </header>
 
-      <section className="relative max-w-7xl mx-auto px-6 pb-20">
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 pb-20">
         <div className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between mb-10">
           <div className="relative max-w-md w-full">
             <HiMagnifyingGlass className="text-white/40 absolute left-4 top-1/2 -translate-y-1/2" />

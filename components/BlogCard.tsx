@@ -12,11 +12,11 @@ export function BlogCard({
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className={`group glass-panel rounded-[28px] p-8 block transition-all duration-500 hover:-translate-y-1.5 hover:border-cyan-400/30 ${
+      className={`group glass-panel rounded-[28px] p-5 sm:p-8 block transition-all duration-500 hover:-translate-y-1.5 hover:border-cyan-400/30 ${
         featured ? "md:col-span-2" : ""
       }`}
     >
-      <div className="flex items-center gap-3 text-sm text-cyan-300 mb-4">
+      <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-sm text-cyan-300 mb-4">
         <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-300/20 text-xs uppercase tracking-[0.16em]">
           {post.category}
         </span>

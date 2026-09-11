@@ -10,7 +10,7 @@ interface VideoModalProps {
 
 export function VideoModal({ title, url, onClose }: VideoModalProps) {
   return (
-    <div className="fixed bottom-6 right-4 z-50 w-[380px] max-w-[90vw] glass-panel rounded-3xl p-4 animate-fade-in glow-ring">
+    <div className="fixed inset-x-3 bottom-24 z-50 sm:inset-x-auto sm:right-4 sm:bottom-6 sm:w-[380px] max-w-[100vw] glass-panel rounded-3xl p-4 animate-fade-in glow-ring">
       <div className="flex justify-between items-center mb-3">
         <h3 className="text-sm font-display font-semibold text-white truncate pr-2">
           {title}

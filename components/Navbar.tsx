@@ -25,17 +25,17 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
-        <div className="glass-panel glow-ring flex h-[72px] items-center justify-between rounded-2xl px-4 sm:px-6">
+        <div className="glass-panel glow-ring flex h-16 sm:h-[72px] items-center justify-between rounded-2xl px-3 sm:px-6">
           <button
             type="button"
             onClick={() => router.push("/")}
-            className="cursor-pointer"
+            className="min-w-0 cursor-pointer"
             aria-label="FLASH USDT PRO home"
           >
             <BrandLogo />
           </button>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const active = pathname === link.href;
               const Icon = link.icon;
@@ -56,7 +56,7 @@ export function Navbar() {
             })}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button onClick={() => router.push("/get-started")} className="!py-2.5 !px-5 text-sm">
               <HiOutlineSparkles />
               Get Started
@@ -65,7 +65,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="md:hidden p-2 text-white hover:text-cyan-300 transition-colors"
+            className="lg:hidden shrink-0 p-2 text-white hover:text-cyan-300 transition-colors"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -75,7 +75,7 @@ export function Navbar() {
         </div>
 
         {open ? (
-          <div className="md:hidden mt-2 glass-panel rounded-2xl px-4 py-5 space-y-2 animate-fade-in">
+          <div className="lg:hidden mt-2 glass-panel rounded-2xl px-4 py-5 space-y-2 animate-fade-in max-h-[70vh] overflow-y-auto">
             {navLinks.map((link) => {
               const Icon = link.icon;
               return (

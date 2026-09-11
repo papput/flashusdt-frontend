@@ -20,8 +20,8 @@ const companyLinks = [
 export function Footer() {
   return (
     <footer className="relative py-16 px-4 sm:px-6 lg:px-8 z-10">
-      <div className="max-w-7xl mx-auto glass-panel rounded-[32px] p-8 md:p-12">
-        <div className="grid md:grid-cols-4 gap-10 mb-10">
+      <div className="max-w-7xl mx-auto glass-panel rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 md:p-12">
+        <div className="grid md:grid-cols-4 gap-8 sm:gap-10 mb-10">
           <div className="md:col-span-2">
             <div className="mb-6">
               <BrandLogo />
