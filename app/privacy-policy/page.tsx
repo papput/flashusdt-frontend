@@ -1,0 +1,10 @@
+import { PrivacyPage } from "@/components/pages/PrivacyPage";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+};
+
+export default function Page() {
+  return <PrivacyPage />;
+}

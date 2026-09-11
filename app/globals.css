@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05070f;
+  --foreground: #f4f7fb;
+  --accent: #22d3ee;
+  --accent-2: #818cf8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-syne);
+  --font-mono: var(--font-plex);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.011em;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-syne), var(--font-manrope), sans-serif;
+  letter-spacing: -0.04em;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: white;
+}
+
+.glass-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 20px 50px -24px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(28px);
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.18),
+    0 0 40px -10px rgba(34, 211, 238, 0.45);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #ffffff 10%, #67e8f9 45%, #818cf8 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, #fde68a, #fb7185, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 45%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.btn-premium:hover::before {
+  transform: translateX(120%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.45s ease-out both;
+}
+
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3.4s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 22s linear infinite;
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
 }
